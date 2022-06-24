@@ -9,6 +9,8 @@ export const schedule = gql`
       seriesView
       seriesAvailable
       matches {
+        matchdate
+        venue
         teamsWinProbability {
           homeTeamShortName
           homeTeamPercentage

@@ -1,3 +1,4 @@
+import { DateTime } from "luxon";
 export const ScheduleCard = ({ data }) => {
   return (
     <>
@@ -55,7 +56,7 @@ export const ScheduleCard = ({ data }) => {
                           {data1?.homeTeamName}
                         </span>
                         <span className="text-center px-2 py-0.5 ml-3 text-xs font-medium text-green-500 bg-green-200 rounded dark:bg-green-700 dark:text-green-400">
-                          T20
+                          {data?.matchType}
                         </span>
                         <span className="flex-1 ml-20 whitespace-nowrap">
                           {data1?.awayTeamName}
@@ -63,7 +64,7 @@ export const ScheduleCard = ({ data }) => {
                       </div>
                       <br></br>
                       <div className="p-3 text-center text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-stone-800 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
-                        <p className="text-center">{data?.matchType}</p>
+                        <p className="text-center"> {data1?.matchdate}</p>
                       </div>
                       <br></br>
                       {data1?.teamsWinProbability?.homeTeamShortName ? (
