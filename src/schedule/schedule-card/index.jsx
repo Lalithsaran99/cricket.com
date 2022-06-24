@@ -1,4 +1,3 @@
-import { DateTime } from "luxon";
 export const ScheduleCard = ({ data }) => {
   return (
     <>
@@ -30,16 +29,15 @@ export const ScheduleCard = ({ data }) => {
               return (
                 <div
                   id="animation-carousel"
-                  key={index}
-                  class="relative"
-                  data-carousel="static"
+                  class="carousel slide relative"
+                  data-bs-ride="carousel"
                 >
-                  <div className="p-3" data-carousel-item>
+                  <div className="p-3" key={index} data-carousel-item>
                     <div className="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 w-100">
                       <div className=" flex items-center justify-start f7 black-50 fw5 truncate w-90 ml1">
                         <div className="h1 w15 pa1 f10 fw5 white flex items-center  justify-center  br2 bg-silver"></div>
                         &nbsp;
-                        <div className="flex ml2 black">
+                        <div className="flex ml2 text-gray-600 font-bold">
                           {index + 1 === 1 || index >= 4
                             ? index + 1 + "th"
                             : index + 1 === 2
@@ -49,6 +47,11 @@ export const ScheduleCard = ({ data }) => {
                             : null}{" "}
                           {data?.matchType}{" "}
                         </div>
+                      </div>
+                      <br></br>
+
+                      <div>
+                        📍<span className="text-gray-600">{data1?.venue}</span>
                       </div>
                       <br></br>
                       <div className="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-stone-800 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
